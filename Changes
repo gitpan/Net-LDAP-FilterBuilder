@@ -1,0 +1,5 @@
+libnet-ldap-filterbuilder (1.0001-1) UNRELEASED; urgency=low
+
+  * Initial release on an unsuspecting world.
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Thu,  2 Oct 2008 13:58:08 +0100
