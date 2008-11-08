@@ -1,3 +1,9 @@
+libnet-ldap-filterbuilder (1.0002-1) UNRELEASED; urgency=low
+
+  * Add example and pod tests 
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Sat,  8 Nov 2008 17:32:57 +0000
+
 libnet-ldap-filterbuilder (1.0001-1) UNRELEASED; urgency=low
 
   * Initial release on an unsuspecting world.

@@ -2,7 +2,7 @@ NAME
     Net::LDAP::FilterBuilder - Build LDAP filter statements
 
 VERSION
-    This document refers to version 1.0001 of Net::LDAP::FilterBuilder
+    This document refers to version 1.0002 of Net::LDAP::FilterBuilder
 
 PURPOSE
     Use this module to construct LDAP filter statments which are compliant

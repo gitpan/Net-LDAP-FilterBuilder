@@ -5,6 +5,8 @@ name           'Net-LDAP-FilterBuilder';
 all_from       'lib/Net/LDAP/FilterBuilder.pm';
 
 test_requires  'Test::More' => 0;
+test_requires  'Test::Pod' => 0;
+test_requires  'Test::Pod::Coverage' => 0;
 
 WriteAll;
 

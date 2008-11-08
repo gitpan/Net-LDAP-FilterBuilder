@@ -1,4 +1,5 @@
 Changes
+examples/demo.pl
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
@@ -15,3 +16,5 @@ META.yml
 README
 t/00-load.t
 t/20-filter.t
+t/pod-coverage.t
+t/pod.t

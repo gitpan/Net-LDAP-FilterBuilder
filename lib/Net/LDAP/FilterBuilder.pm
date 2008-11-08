@@ -1,7 +1,7 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/libnet-ldap-filterbuilder/trunk/lib/Net/LDAP/FilterBuilder.pm $
-# $LastChangedRevision: 234 $
-# $LastChangedDate: 2008-10-02 15:15:43 +0100 (Thu, 02 Oct 2008) $
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/cpan/libnet-ldap-filterbuilder/trunk/lib/Net/LDAP/FilterBuilder.pm $
+# $LastChangedRevision: 282 $
+# $LastChangedDate: 2008-11-08 17:34:38 +0000 (Sat, 08 Nov 2008) $
 # $LastChangedBy: oliver $
 #
 package Net::LDAP::FilterBuilder;
@@ -9,7 +9,7 @@ package Net::LDAP::FilterBuilder;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '1.0001';
+our $VERSION = '1.0002';
 $VERSION = eval $VERSION; # numify for warning-free dev releases
 
 use overload '""' => \&as_str;
@@ -102,7 +102,7 @@ Net::LDAP::FilterBuilder - Build LDAP filter statements
 
 =head1 VERSION
 
-This document refers to version 1.0001 of Net::LDAP::FilterBuilder
+This document refers to version 1.0002 of Net::LDAP::FilterBuilder
 
 =head1 PURPOSE
 
