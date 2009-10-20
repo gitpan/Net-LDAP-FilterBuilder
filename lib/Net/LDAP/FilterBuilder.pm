@@ -1,7 +1,7 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/cpan/libnet-ldap-filterbuilder/trunk/lib/Net/LDAP/FilterBuilder.pm $
-# $LastChangedRevision: 282 $
-# $LastChangedDate: 2008-11-08 17:34:38 +0000 (Sat, 08 Nov 2008) $
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/cpan/libnet-ldap-filterbuilder-perl/trunk/lib/Net/LDAP/FilterBuilder.pm $
+# $LastChangedRevision: 567 $
+# $LastChangedDate: 2009-10-20 08:27:24 +0100 (Tue, 20 Oct 2009) $
 # $LastChangedBy: oliver $
 #
 package Net::LDAP::FilterBuilder;
@@ -9,7 +9,7 @@ package Net::LDAP::FilterBuilder;
 use strict;
 use warnings FATAL => 'all';
 
-our $VERSION = '1.0002';
+our $VERSION = '1.0003';
 $VERSION = eval $VERSION; # numify for warning-free dev releases
 
 use overload '""' => \&as_str;
@@ -102,7 +102,7 @@ Net::LDAP::FilterBuilder - Build LDAP filter statements
 
 =head1 VERSION
 
-This document refers to version 1.0002 of Net::LDAP::FilterBuilder
+This document refers to version 1.0003 of Net::LDAP::FilterBuilder
 
 =head1 PURPOSE
 
@@ -168,7 +168,7 @@ The value returned is an object, but stringifies to the current query:
 
 However you can refine the filter statement using three additional methods for
 the logical operations C<and>, C<or> and C<not>, as shown in the L<"SYOPSIS">
-section, above.
+section, above, and the L<"METHODS"> section below.
 
 There are two ways to refine a filter. Either call the logic method with a new
 attribute and value, or call a logic method and pass another
@@ -200,6 +200,39 @@ enable a wildcard (substring) match on a value:
 
  my $filter = Net::LDAP::FilterBuilder->new( sn => \'foo*bar' );
  # (sn=foo*bar)
+
+=head1 METHODS
+
+=over 4
+
+=item B<as_str>
+
+Returns the string representation of the LDAP filter.  Note that the
+object will stringify to this value in string context, too.
+
+=item B<and>(FILTERSPEC)
+
+Logically conjoins this filter with the one specified by FILTERSPEC.
+FILTERSPEC may be a L<Net::LDAP::FilterBuilder> object, or a
+hash representation of the filter as taken by L<B<new>>.
+
+Returns the newly-conjoined L<Net::LDAP::FilterBuilder>.
+
+=item B<or>(FILTERSPEC)
+
+Logically disjoins this filter with the one specified by FILTERSPEC.
+FILTERSPEC may be a L<Net::LDAP::FilterBuilder> object, or a
+hash representation of the filter as taken by L<B<new>>.
+
+Returns the newly-disjoined L<Net::LDAP::FilterBuilder>.
+
+=item B<not>
+
+Logically complements this filter.
+
+Returns the newly-negated L<Net::LDAP::FilterBuilder>.
+
+=back
 
 =head1 AUTHOR
 

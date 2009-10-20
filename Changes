@@ -1,3 +1,9 @@
+libnet-ldap-filterbuilder (1.0003-1) UNRELEASED; urgency=low
+
+  * Add docs patch from Tom Jones to expose as_str and other methods.
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Tue, 20 Oct 2009 08:21:49 +0100
+
 libnet-ldap-filterbuilder (1.0002-1) UNRELEASED; urgency=low
 
   * Add example and pod tests 

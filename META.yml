@@ -22,4 +22,4 @@ requires:
   perl: 5.8.1
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.0002
+version: 1.0003

@@ -2,7 +2,7 @@ NAME
     Net::LDAP::FilterBuilder - Build LDAP filter statements
 
 VERSION
-    This document refers to version 1.0002 of Net::LDAP::FilterBuilder
+    This document refers to version 1.0003 of Net::LDAP::FilterBuilder
 
 PURPOSE
     Use this module to construct LDAP filter statments which are compliant
@@ -66,7 +66,7 @@ USAGE
 
     However you can refine the filter statement using three additional
     methods for the logical operations "and", "or" and "not", as shown in
-    the "SYOPSIS" section, above.
+    the "SYOPSIS" section, above, and the "METHODS" section below.
 
     There are two ways to refine a filter. Either call the logic method with
     a new attribute and value, or call a logic method and pass another
@@ -90,13 +90,36 @@ USAGE
     special significance to LDAP filter statments in your value argument,
     then those characters will be escaped. The list of characters is:
 
-     ( ) * \ NUL 
+     ( ) * \ NUL
 
     To avoid this pass in a scalar reference as the value argument. For
     example to enable a wildcard (substring) match on a value:
 
      my $filter = Net::LDAP::FilterBuilder->new( sn => \'foo*bar' );
      # (sn=foo*bar)
+
+METHODS
+    as_str
+        Returns the string representation of the LDAP filter. Note that the
+        object will stringify to this value in string context, too.
+
+    and(FILTERSPEC)
+        Logically conjoins this filter with the one specified by FILTERSPEC.
+        FILTERSPEC may be a Net::LDAP::FilterBuilder object, or a hash
+        representation of the filter as taken by new.
+
+        Returns the newly-conjoined Net::LDAP::FilterBuilder.
+
+    or(FILTERSPEC)
+        Logically disjoins this filter with the one specified by FILTERSPEC.
+        FILTERSPEC may be a Net::LDAP::FilterBuilder object, or a hash
+        representation of the filter as taken by new.
+
+        Returns the newly-disjoined Net::LDAP::FilterBuilder.
+
+    not Logically complements this filter.
+
+        Returns the newly-negated Net::LDAP::FilterBuilder.
 
 AUTHOR
     Originally written by Ray Miller.
