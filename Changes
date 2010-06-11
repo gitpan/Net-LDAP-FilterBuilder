@@ -1,3 +1,9 @@
+libnet-ldap-filterbuilder (1.0004-1) UNRELEASED; urgency=low
+
+  * Fix for new Test::Simple which does not like stringification 
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Fri, 11 Jun 2010 15:36:46 +0100
+
 libnet-ldap-filterbuilder (1.0003-1) UNRELEASED; urgency=low
 
   * Add docs patch from Tom Jones to expose as_str and other methods.

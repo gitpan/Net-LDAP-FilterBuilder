@@ -7,7 +7,7 @@ use ExtUtils::MakeMaker ();
 
 use vars qw{$VERSION $ISCORE @ISA};
 BEGIN {
-	$VERSION = '0.77';
+	$VERSION = '0.76';
 	$ISCORE  = 1;
 	@ISA     = qw{Module::Install::Base};
 }
@@ -181,9 +181,7 @@ sub write {
 
 	my $user_preop = delete $args{dist}->{PREOP};
 	if (my $preop = $self->admin->preop($user_preop)) {
-		foreach my $key ( keys %$preop ) {
-			$args{dist}->{$key} = $preop->{$key};
-		}
+		$args{dist} = $preop;
 	}
 
 	my $mm = ExtUtils::MakeMaker::WriteMakefile(%args);
@@ -250,4 +248,4 @@ sub postamble {
 
 __END__
 
-#line 379
+#line 377

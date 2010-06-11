@@ -2,7 +2,7 @@ NAME
     Net::LDAP::FilterBuilder - Build LDAP filter statements
 
 VERSION
-    This document refers to version 1.0003 of Net::LDAP::FilterBuilder
+    This document refers to version 1.0004 of Net::LDAP::FilterBuilder
 
 PURPOSE
     Use this module to construct LDAP filter statments which are compliant
@@ -20,11 +20,11 @@ SYNOPSIS
 
      $filter1->and( givenName => 'David' );
      # (&(sn=Jones)(givenName=David))
- 
-     my $filter2 = Net::LDAP::FilterBuilder->new( sn => [ 'Jones', 'Edwards', 'Lewis' ] );
+     
+ my $filter2 = Net::LDAP::FilterBuilder->new( sn => [ 'Jones', 'Edwards', 'Lewis' ] );
      # (|(sn=Jones)(sn=Edwards)(sn=Lewis))
- 
-     my $filter3 = Net::LDAP::FilterBuilder->new( givenName => 'David' )->not;
+     
+ my $filter3 = Net::LDAP::FilterBuilder->new( givenName => 'David' )->not;
      # (!(givenName=David))
 
     Build up filters incrementally from other FilterBuidler objects:

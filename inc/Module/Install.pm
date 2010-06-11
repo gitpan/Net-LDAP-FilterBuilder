@@ -30,7 +30,7 @@ BEGIN {
 	# This is not enforced yet, but will be some time in the next few
 	# releases once we can make sure it won't clash with custom
 	# Module::Install extensions.
-	$VERSION = '0.77';
+	$VERSION = '0.76';
 
 	*inc::Module::Install::VERSION = *VERSION;
 	@inc::Module::Install::ISA     = __PACKAGE__;
@@ -125,10 +125,8 @@ sub autoload {
 			goto &$code unless $cwd eq $pwd;
 		}
 		$$sym =~ /([^:]+)$/ or die "Cannot autoload $who - $sym";
-		unless ( uc($1) eq $1 ) {
-			unshift @_, ( $self, $1 );
-			goto &{$self->can('call')};
-		}
+		unshift @_, ( $self, $1 );
+		goto &{$self->can('call')} unless uc($1) eq $1;
 	};
 }
 
@@ -340,9 +338,6 @@ sub _write {
 	foreach ( 1 .. $#_ ) { print FH $_[$_] or die "print($_[0]): $!" }
 	close FH or die "close($_[0]): $!";
 }
-
-# _version is for processing module versions (eg, 1.03_05) not
-# Perl versions (eg, 5.8.1).
 
 sub _version ($) {
 	my $s = shift || 0;
